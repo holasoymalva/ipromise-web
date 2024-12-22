@@ -1,70 +1,114 @@
-# Getting Started with Create React App
+# 🤝 iPromise Web
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+[![React](https://img.shields.io/badge/React-18.2.0-blue.svg)](https://reactjs.org/)
+[![TailwindCSS](https://img.shields.io/badge/TailwindCSS-3.3.6-38B2AC.svg)](https://tailwindcss.com/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-## Available Scripts
+iPromise Web es una aplicación web minimalista para gestionar y dar seguimiento a tus promesas personales. Con una interfaz limpia y amigable, te permite registrar, actualizar y mantener un historial de los compromisos que haces contigo mismo o con otros.
 
-In the project directory, you can run:
+![iPromise Web App Screenshot](https://via.placeholder.com/800x400?text=iPromise+Web+App)
 
-### `npm start`
+## ✨ Características
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- 📝 Crear, editar y eliminar promesas
+- 🔄 Actualizar el estado de las promesas (Pendiente, Cumplida, Rota)
+- 💾 Persistencia de datos local en el navegador
+- 📱 Diseño responsive para todos los dispositivos
+- 🎨 Interfaz limpia y minimalista
+- ⚡ Rendimiento optimizado
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## 🚀 Instalación
 
-### `npm test`
+1. Clona el repositorio:
+```bash
+git clone https://github.com/holasoymalva/ipromise-web.git
+cd ipromise-web
+```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+2. Instala las dependencias:
+```bash
+npm install
+```
 
-### `npm run build`
+3. Inicia el servidor de desarrollo:
+```bash
+npm run dev
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+4. Abre [http://localhost:5173](http://localhost:5173) en tu navegador.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## 🛠️ Tecnologías
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- [React](https://reactjs.org/)
+- [Vite](https://vitejs.dev/)
+- [TailwindCSS](https://tailwindcss.com/)
+- [Lucide Icons](https://lucide.dev/)
+- LocalStorage API
 
-### `npm run eject`
+## 📦 Estructura del Proyecto
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+```
+ipromise-web/
+├── src/
+│   ├── components/
+│   │   └── PromisesApp.jsx
+│   ├── services/
+│   │   └── storage.js
+│   ├── App.jsx
+│   └── index.css
+├── public/
+├── package.json
+└── README.md
+```
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## 💻 Uso
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+1. **Agregar una nueva promesa:**
+   - Escribe tu promesa en el campo de texto
+   - Presiona Enter o el botón "Agregar"
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+2. **Actualizar estado:**
+   - Selecciona entre "Pendiente", "Cumplida" o "Rota"
+   - Los cambios se guardan automáticamente
 
-## Learn More
+3. **Editar promesa:**
+   - Haz clic en el icono de editar (✏️)
+   - Modifica el texto
+   - Guarda los cambios
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+4. **Eliminar promesa:**
+   - Haz clic en el icono de eliminar (🗑️)
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## 🤝 Contribuir
 
-### Code Splitting
+Las contribuciones son bienvenidas. Por favor, sigue estos pasos:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+1. Fork el proyecto
+2. Crea una rama para tu característica (`git checkout -b feature/AmazingFeature`)
+3. Commit tus cambios (`git commit -m 'Add some AmazingFeature'`)
+4. Push a la rama (`git push origin feature/AmazingFeature`)
+5. Abre un Pull Request
 
-### Analyzing the Bundle Size
+## 📄 Licencia
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+Este proyecto está bajo la Licencia MIT - ver el archivo [LICENSE.md](LICENSE.md) para más detalles.
 
-### Making a Progressive Web App
+## 👥 Autores
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+- [@holasoymalva](https://github.com/holasoymalva) - Idea y desarrollo inicial
 
-### Advanced Configuration
+## 🙏 Agradecimientos
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+- A todos los que han contribuido con ideas y sugerencias
+- A la comunidad de React por sus excelentes herramientas
+- A los creadores de las librerías utilizadas
 
-### Deployment
+## 📬 Contacto
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+Si tienes preguntas o sugerencias, no dudes en:
+- Abrir un [issue](https://github.com/holasoymalva/ipromise-web/issues)
+- Contactarme en [Twitter](https://twitter.com/holasoymalva)
 
-### `npm run build` fails to minify
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+⭐️ ¡Si te gusta este proyecto, dale una estrella!
