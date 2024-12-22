@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/ipromise-web/static/css/main.43f5a98d.css",
+    "main.js": "/ipromise-web/static/js/main.5021b5bc.js",
+    "static/js/488.933b779f.chunk.js": "/ipromise-web/static/js/488.933b779f.chunk.js",
+    "index.html": "/ipromise-web/index.html",
+    "main.43f5a98d.css.map": "/ipromise-web/static/css/main.43f5a98d.css.map",
+    "main.5021b5bc.js.map": "/ipromise-web/static/js/main.5021b5bc.js.map",
+    "488.933b779f.chunk.js.map": "/ipromise-web/static/js/488.933b779f.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.43f5a98d.css",
+    "static/js/main.5021b5bc.js"
+  ]
+}
