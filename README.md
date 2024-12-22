@@ -6,7 +6,7 @@
 
 iPromise Web es una aplicación web minimalista para gestionar y dar seguimiento a tus promesas personales. Con una interfaz limpia y amigable, te permite registrar, actualizar y mantener un historial de los compromisos que haces contigo mismo o con otros.
 
-![iPromise Web App Screenshot](https://via.placeholder.com/800x400?text=iPromise+Web+App)
+<img width="683" alt="image" src="https://github.com/user-attachments/assets/1128e624-ec44-422f-b5d8-645ddfde2a64" />
 
 ## ✨ Características
 
