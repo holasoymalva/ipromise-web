@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Plus, Edit2, Trash2, Check, X } from 'lucide-react';
+import { StorageService } from '../services/storage';
 
 const Button = ({ children, onClick, variant = 'default', size = 'default', className = '' }) => {
   const baseStyles = "inline-flex items-center justify-center rounded-md font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 disabled:opacity-50";
@@ -27,17 +28,23 @@ const PromisesApp = () => {
   const [newPromise, setNewPromise] = useState('');
   const [editingId, setEditingId] = useState(null);
   const [editText, setEditText] = useState('');
+  const [storageAvailable, setStorageAvailable] = useState(true);
 
   useEffect(() => {
-    const savedPromises = localStorage.getItem('promises');
-    if (savedPromises) {
-      setPromises(JSON.parse(savedPromises));
+    const isAvailable = StorageService.isAvailable();
+    setStorageAvailable(isAvailable);
+    
+    if (isAvailable) {
+      const savedPromises = StorageService.loadPromises();
+      setPromises(savedPromises);
     }
   }, []);
 
   useEffect(() => {
-    localStorage.setItem('promises', JSON.stringify(promises));
-  }, [promises]);
+    if (storageAvailable) {
+      StorageService.savePromises(promises);
+    }
+  }, [promises, storageAvailable]);
 
   const addPromise = () => {
     if (newPromise.trim()) {
@@ -45,20 +52,23 @@ const PromisesApp = () => {
         id: Date.now(),
         text: newPromise,
         status: 'pending',
-        date: new Date().toISOString()
+        date: new Date().toISOString(),
+        lastModified: new Date().toISOString()
       };
-      setPromises([...promises, promise]);
+      setPromises(prev => [...prev, promise]);
       setNewPromise('');
     }
   };
 
   const deletePromise = (id) => {
-    setPromises(promises.filter(p => p.id !== id));
+    setPromises(prev => prev.filter(p => p.id !== id));
   };
 
   const updateStatus = (id, status) => {
-    setPromises(promises.map(p => 
-      p.id === id ? { ...p, status } : p
+    setPromises(prev => prev.map(p => 
+      p.id === id 
+        ? { ...p, status, lastModified: new Date().toISOString() } 
+        : p
     ));
   };
 
@@ -69,8 +79,10 @@ const PromisesApp = () => {
 
   const saveEdit = () => {
     if (editText.trim()) {
-      setPromises(promises.map(p => 
-        p.id === editingId ? { ...p, text: editText } : p
+      setPromises(prev => prev.map(p => 
+        p.id === editingId 
+          ? { ...p, text: editText, lastModified: new Date().toISOString() } 
+          : p
       ));
       setEditingId(null);
       setEditText('');
@@ -87,6 +99,11 @@ const PromisesApp = () => {
 
   return (
     <div className="max-w-2xl mx-auto p-4">
+      {!storageAvailable && (
+        <div className="bg-yellow-100 border-l-4 border-yellow-500 text-yellow-700 p-4 mb-4">
+          ⚠️ El almacenamiento local no está disponible. Tus promesas no se guardarán entre sesiones.
+        </div>
+      )}
       <div className="bg-white rounded-lg shadow-md p-6 mb-6">
         <h1 className="text-2xl font-bold text-center mb-4">Mis Promesas</h1>
         <div className="flex gap-2">
